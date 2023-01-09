@@ -1,5 +1,6 @@
 package com.example.searchbin.domain
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -12,7 +13,8 @@ class Number(
 class Country(
     val numeric : String,
     val alpha2 : String,
-    val name : String,
+    @SerialName("name")
+    val nameCountry : String,
     //val emoji : Image,
     val currency : String,
     val latitude : Int,
@@ -21,7 +23,8 @@ class Country(
 
 @Serializable
 class Bank(
-    val name : String,
+    @SerialName("name")
+    val nameBank : String,
     val url : String,
     val phone : String,
     val city : String
