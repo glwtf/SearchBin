@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SearchBin</string>
+    <string name="search_time">Дата поиска</string>
+    <string name="searched_bin">BIN</string>
 </resources>

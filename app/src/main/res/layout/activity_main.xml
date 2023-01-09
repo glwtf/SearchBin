@@ -10,7 +10,10 @@
         android:id="@+id/rv_search_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:stackFromEnd="true"
+        app:reverseLayout="true"
+        tools:listitem="@layout/item_search_result" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_start_search"
@@ -21,5 +24,7 @@
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat ="@drawable/ic_search" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
