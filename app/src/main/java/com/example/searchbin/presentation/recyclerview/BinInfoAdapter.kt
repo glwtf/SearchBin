@@ -27,17 +27,10 @@ class BinInfoAdapter() : ListAdapter<BinInfo, BinInfoViewHolder>(BinInfoDiffCall
         val binding = holder.binding
 
         binding.tvSearchedBin.text = item.bin.toString()
-        binding.tvSearchTime.text = getCurrentTime()
+        binding.tvSearchTime.text = item.time
 
         binding.root.setOnClickListener {
             onSearchedItemClickListener?.invoke(item)
         }
-    }
-
-    @SuppressLint("SimpleDateFormat")
-    private fun getCurrentTime() : String {
-        val time = Calendar.getInstance().time
-        val formatter = SimpleDateFormat("dd/MM/yyyy'T'HH:mm:ss")
-        return formatter.format(time)
     }
 }

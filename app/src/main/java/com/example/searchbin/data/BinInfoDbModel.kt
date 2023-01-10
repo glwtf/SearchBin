@@ -16,7 +16,8 @@ class BinInfoDbModel (
     val brand : String,
     val prepaid : Boolean,
     @Embedded val country : Country,
-    @Embedded val bank : Bank
+    @Embedded val bank : Bank,
+    val time : String
 )
 {
 }
