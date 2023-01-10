@@ -16,9 +16,8 @@ class SearchBinRepositoryImpl(application: Application) : SearchBinRepository
             mapper.mapListDbModelToListEntity(it)
     }
 
-    override suspend fun addSearchedBin(binInfo: BinInfo, bin : String) {
-        val binInt = bin.toInt()
-        val item = mapper.mapEntityToDbModel(binInfo, binInt)
+    override suspend fun addSearchedBin(binInfo: BinInfo) {
+        val item = mapper.mapEntityToDbModel(binInfo)
         binInfoDao.addSearchedBinInfo(item)
     }
 
@@ -32,7 +31,8 @@ class SearchBinRepositoryImpl(application: Application) : SearchBinRepository
     override suspend fun loadBinInfo(bin: String): Boolean {
         val binInfoRequest = LoadBinInfo(bin)
         val binInfo = binInfoRequest()
-        addSearchedBin(binInfo, bin)
+        binInfo.bin = bin.toInt();
+        addSearchedBin(binInfo)
         return true
         TODO("Add check bad result")
     }

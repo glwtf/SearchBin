@@ -4,8 +4,8 @@ import com.example.searchbin.domain.BinInfo
 
 class BinInfoMapper {
 
-    fun mapEntityToDbModel(binInfoItem: BinInfo, bin : Int) = BinInfoDbModel(
-        bin = bin,
+    fun mapEntityToDbModel(binInfoItem: BinInfo) = BinInfoDbModel(
+        bin = binInfoItem.bin,
         number = binInfoItem.number,
         scheme = binInfoItem.scheme,
         type = binInfoItem.type,
@@ -16,6 +16,7 @@ class BinInfoMapper {
     )
 
     fun mapDbModelToEntity(BinInfoDbModel: BinInfoDbModel) = BinInfo(
+        bin = BinInfoDbModel.bin,
         number = BinInfoDbModel.number,
         scheme = BinInfoDbModel.scheme,
         type = BinInfoDbModel.type,
