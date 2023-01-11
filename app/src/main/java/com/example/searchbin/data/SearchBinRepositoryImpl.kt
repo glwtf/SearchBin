@@ -31,14 +31,13 @@ class SearchBinRepositoryImpl(application: Application) : SearchBinRepository
         //TODO("Add check bad result")
     }
 
-    override suspend fun loadBinInfo(bin: String): Boolean {
+    override suspend fun loadBinInfo(bin: String): BinInfo {
         val binInfoRequest = LoadBinInfo(bin)
         val binInfo = binInfoRequest()
         binInfo.bin = bin.toInt();
         binInfo.time = getCurrentTime()
         addSearchedBin(binInfo)
-        return true
-        //TODO("Add check bad result")
+        return binInfo
     }
 
     @SuppressLint("SimpleDateFormat")

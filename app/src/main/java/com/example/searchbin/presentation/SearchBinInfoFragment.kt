@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.searchbin.databinding.FragmentSearchBinInfoBinding
+import com.example.searchbin.domain.BinInfo
 import com.example.searchbin.presentation.viewModel.SearchBinInfoViewModel
 
 class SearchBinInfoFragment : Fragment() {
@@ -33,7 +35,9 @@ class SearchBinInfoFragment : Fragment() {
             val bin = binding.etBin.text.toString()
             val validBin = validateBin(bin)
             if (validBin) {
-                viewModel.searchBinInfo(bin)
+                viewModel.searchBinInfo(bin).observe(viewLifecycleOwner) { binInfo ->
+                    launchFragmentBinInfo(binInfo)
+                }
             }
 
         }
@@ -43,6 +47,12 @@ class SearchBinInfoFragment : Fragment() {
         var ret = true
         //TODO: add validate
         return ret
+    }
+
+    private fun launchFragmentBinInfo(binInfo: BinInfo) {
+        findNavController().navigate(
+            SearchBinInfoFragmentDirections.actionSearchBinInfoFragmentToBinInfoFragment(binInfo)
+        )
     }
 
     override fun onDestroyView() {

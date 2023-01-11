@@ -12,8 +12,7 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_searchBinInfoFragment"
-            app:destination="@id/searchBinInfoFragment"
-            app:popUpTo="@id/mainFragment" />
+            app:destination="@id/searchBinInfoFragment" />
         <action
             android:id="@+id/action_mainFragment_to_binInfoFragment"
             app:destination="@id/binInfoFragment"
