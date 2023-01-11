@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.BinInfoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/scheme_network"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_scheme_network"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:text="@string/scheme_network"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/brand"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:text="@string/brand"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/card_number"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/length"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text="@string/length"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="@string/luhn"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_luhn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text="@string/luhn"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/type"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:text="@string/type"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/prepaid"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_prepaid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:text="@string/prepaid"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/country"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:text="@string/country"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/bank"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text="@string/bank"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text="@string/city"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:autoLink="web"
+                android:clickable="true"
+                android:text="@string/url"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:autoLink="phone"
+                android:clickable="true"
+                android:text="@string/phone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
