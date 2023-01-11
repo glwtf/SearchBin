@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
@@ -61,7 +62,6 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/length"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -78,7 +78,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
                 android:text="@string/luhn"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -168,11 +168,21 @@
                 android:text="@string/bank"/>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text="@string/city"/>
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:textSize="16sp"
+                android:autoLink="web"
+                android:clickable="true"
                 android:text="@string/url"/>
 
             <com.google.android.material.textview.MaterialTextView
@@ -181,6 +191,8 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:textSize="16sp"
+                android:autoLink="phone"
+                android:clickable="true"
                 android:text="@string/phone"/>
 
         </LinearLayout>

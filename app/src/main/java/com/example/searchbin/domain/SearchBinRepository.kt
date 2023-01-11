@@ -6,6 +6,6 @@ interface SearchBinRepository {
 
     fun getSearchedBinList() : LiveData<List<BinInfo>>
     suspend fun addSearchedBin(binInfo: BinInfo)
-    suspend fun getSearchedBinItem(bin : String) : BinInfo?
+    suspend fun getSearchedBinItem(bin : Int) : BinInfo
     suspend fun loadBinInfo(bin : String) : BinInfo
 }

@@ -27,5 +27,5 @@ class Bank(
     val nameBank : String,
     val url : String,
     val phone : String,
-    val city : String
+    val city : String = "?"
 )
