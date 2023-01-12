@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SearchBin</string>
+    <string name="app_name">Search BIN</string>
     <string name="search_time">Дата поиска</string>
     <string name="searched_bin">BIN</string>
     <string name="scheme_network">scheme/network</string>
