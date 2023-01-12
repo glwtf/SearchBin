@@ -1,6 +1,8 @@
 package com.example.searchbin.presentation
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,27 +34,45 @@ class SearchBinInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.searchButton.setOnClickListener {
-            val bin = binding.etBin.text.toString()
-            val validBin = validateBin(bin)
-            if (validBin) {
-                viewModel.searchBinInfo(bin).observe(viewLifecycleOwner) { binInfo ->
+        val bin = binding.etBin.text.toString()
+            viewModel.searchBinInfo(bin).observe(viewLifecycleOwner) { binInfo ->
+                if (binInfo.bin != 0) {
                     launchFragmentBinInfo(binInfo)
                 }
             }
-
         }
-    }
-
-    private fun validateBin(bin : String) : Boolean {
-        var ret = true
-        //TODO: add validate
-        return ret
+        setTextChangeListener()
+        setErrorListener()
     }
 
     private fun launchFragmentBinInfo(binInfo: BinInfo) {
         findNavController().navigate(
             SearchBinInfoFragmentDirections.actionSearchBinInfoFragmentToBinInfoFragment(binInfo)
         )
+    }
+
+    private fun setTextChangeListener() {
+        binding.etBin.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                viewModel.resetErrorInputBin()
+            }
+
+            override fun afterTextChanged(s: Editable?) { }
+
+        })
+    }
+
+    private fun setErrorListener() {
+        viewModel.errorInputBin.observe(viewLifecycleOwner) { state ->
+            if (state == true) {
+                binding.tilBin.error = "Wrong BIN type!"
+            }
+            else {
+                binding.tilBin.error = null
+            }
+        }
     }
 
     override fun onDestroyView() {
