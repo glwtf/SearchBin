@@ -15,5 +15,6 @@
     <string name="url">url</string>
     <string name="phone">phone</string>
     <string name="search_btn">search</string>
+    <string name="bin_not_found">BIN information not found!</string>
 
 </resources>

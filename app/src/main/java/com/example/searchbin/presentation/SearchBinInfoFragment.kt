@@ -1,5 +1,6 @@
 package com.example.searchbin.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.searchbin.R
 import com.example.searchbin.databinding.FragmentSearchBinInfoBinding
 import com.example.searchbin.domain.BinInfo
 import com.example.searchbin.presentation.viewModel.SearchBinInfoViewModel
@@ -31,12 +33,13 @@ class SearchBinInfoFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.searchButton.setOnClickListener {
         val bin = binding.etBin.text.toString()
             viewModel.searchBinInfo(bin).observe(viewLifecycleOwner) { binInfo ->
-                if (binInfo.bin != 0) {
+                if (binInfo.bin != BinInfo.UNKNOWN_INT) {
                     launchFragmentBinInfo(binInfo)
                 }
             }
@@ -67,7 +70,7 @@ class SearchBinInfoFragment : Fragment() {
     private fun setErrorListener() {
         viewModel.errorInputBin.observe(viewLifecycleOwner) { state ->
             if (state == true) {
-                binding.tilBin.error = "Wrong BIN type!"
+                binding.tilBin.error = "Wrong BIN type! Must be a number between 6 and 8 characters long"
             }
             else {
                 binding.tilBin.error = null

@@ -33,9 +33,11 @@ class SearchBinRepositoryImpl(application: Application) : SearchBinRepository
     override suspend fun loadBinInfo(bin: String): BinInfo {
         val binInfoRequest = LoadBinInfo(bin)
         val binInfo = binInfoRequest()
-        binInfo.bin = bin.toInt();
-        binInfo.time = getCurrentTime()
-        addSearchedBin(binInfo)
+        if (binInfo.scheme != LoadBinInfo.NOT_FOUND) {
+            binInfo.bin = bin.toInt()
+            binInfo.time = getCurrentTime()
+            addSearchedBin(binInfo)
+        }
         return binInfo
     }
 
