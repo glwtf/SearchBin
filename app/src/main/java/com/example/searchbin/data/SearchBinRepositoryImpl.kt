@@ -24,12 +24,6 @@ class SearchBinRepositoryImpl(application: Application) : SearchBinRepository
         binInfoDao.addSearchedBinInfo(item)
     }
 
-    override suspend fun getSearchedBinItem(bin: Int): BinInfo {
-        val item = binInfoDao.getSearchedBinInfo(bin)
-        return mapper.mapDbModelToEntity(item)
-        //TODO("Add check bad result")
-    }
-
     override suspend fun loadBinInfo(bin: String): BinInfo {
         val binInfoRequest = LoadBinInfo(bin)
         val binInfo = binInfoRequest()

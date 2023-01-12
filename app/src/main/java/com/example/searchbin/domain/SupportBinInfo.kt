@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 class Number(
     val length : Int = BinInfo.UNKNOWN_INT,
     val luhn : Boolean = false
-)
+) : java.io.Serializable
 
 @Serializable
 class Country(
@@ -18,7 +18,7 @@ class Country(
     val currency : String = BinInfo.UNKNOWN_STRING,
     val latitude : Int = BinInfo.UNKNOWN_INT,
     val  longitude : Int = BinInfo.UNKNOWN_INT
-)
+) : java.io.Serializable
 
 @Serializable
 class Bank(
@@ -27,4 +27,4 @@ class Bank(
     val url : String = BinInfo.UNKNOWN_STRING,
     val phone : String = BinInfo.UNKNOWN_STRING,
     val city : String = BinInfo.UNKNOWN_STRING
-)
+) : java.io.Serializable
