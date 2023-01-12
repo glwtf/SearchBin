@@ -5,27 +5,26 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class Number(
-    val length : Int,
-    val luhn : Boolean
+    val length : Int = BinInfo.UNKNOWN_INT,
+    val luhn : Boolean = false
 )
 
 @Serializable
 class Country(
-    val numeric : String,
-    val alpha2 : String,
+    val numeric : String = BinInfo.UNKNOWN_STRING,
+    val alpha2 : String = BinInfo.UNKNOWN_STRING,
     @SerialName("name")
-    val nameCountry : String,
-    //val emoji : Image,
-    val currency : String,
-    val latitude : Int,
-    val  longitude : Int
+    val nameCountry : String = BinInfo.UNKNOWN_STRING,
+    val currency : String = BinInfo.UNKNOWN_STRING,
+    val latitude : Int = BinInfo.UNKNOWN_INT,
+    val  longitude : Int = BinInfo.UNKNOWN_INT
 )
 
 @Serializable
 class Bank(
     @SerialName("name")
-    val nameBank : String,
-    val url : String,
-    val phone : String,
-    val city : String = "?"
+    val nameBank : String = BinInfo.UNKNOWN_STRING,
+    val url : String = BinInfo.UNKNOWN_STRING,
+    val phone : String = BinInfo.UNKNOWN_STRING,
+    val city : String = BinInfo.UNKNOWN_STRING
 )
